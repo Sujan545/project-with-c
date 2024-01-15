@@ -11,7 +11,7 @@ struct student
 
 	int main()
 	{
-		
+	
 	char username[50],password[50],user[]="admin",pass[]="8855";
 	int choice,i=0;
 	char cont;
