@@ -1,9 +1,9 @@
 // HEADER FILES
 #include <stdio.h> //Use for standard I/O Operation
-#include <conio.h> //Use for delay()
+#include <stdlib.h> //Use for delay()
 
 #include <stdlib.h>
-#include <windows.h>
+//#include <windows.h>
 
 char password[50];
 int b, valid = 0;
@@ -51,7 +51,7 @@ void WelcomeScreen() // function for welcome screen
     printf("\n\t\t\t\t#   BIRTAMODE MUNCIPALITY VACCINATION PROGRAMME    #");
     printf("\n\t\t\t\t####################################################");
     printf("\n\n\n\n\n Press any key......\n");
-    getch();       // Use to holds screen for some seconds
+    getchar();       // Use to holds screen for some seconds
     system("cls"); // Use to clear screen
 }
 
@@ -105,7 +105,7 @@ void MainMenu() // function decleration
 
     default:
         printf("\t\t\tInvalid entry. Please enter right option :)");
-        getch(); // holds screen
+        getchar(); // holds screen
     }            // end of switch
 }
 
@@ -114,7 +114,7 @@ void ex_it(void) // function to exit
     system("cls");
     Title(); // call Title function
     printf("\n\n\n\n\n\t\t\tTHANK YOU FOR VISITING :)");
-    getch(); // holds screen
+    getchar(); // holds screen
     exit(1);
 }
 
@@ -136,7 +136,7 @@ top:
         printf("\n\t\t PASSWORD: ");
         for (i = 0; i < 20; i++)
         {
-            password[i] = getch();
+            password[i] = getchar();
             if (password[i] == 13)
             {
                 break;
@@ -158,13 +158,13 @@ top:
             printf("You Enter wrong password Please login again.");
             e++;
 
-            getch();
+            getchar();
         }
     } while (e <= 1);
     if (e > 1)
     {
         printf("You have cross the limit. You cannot login. :( :(");
-        getch();
+        getchar();
         ex_it();
     }
 
@@ -246,7 +246,7 @@ A:
     printf("\n\t\t----------------------------------------------------------------------------------");
     printf("\n\n\t\tType Y/y for yes and n/N for no.");
 
-    cont = getche();
+    cont = getchar();
     system("cls");
     if (cont == 'y')
     {
@@ -320,7 +320,7 @@ void func_list()
     }
 
     fclose(bm);
-    getch();
+    getchar();
     MainMenu();
 }
 
@@ -358,7 +358,7 @@ void Search_rec(void) // search function
         printf("result could not be found:");
     }
     fclose(bm);
-    getch();
+    getchar();
     MainMenu();
 }
 
@@ -375,7 +375,7 @@ void Edit_rec(void)
     if (bm == NULL)
     {
         printf("\n\t Can not open file!! ");
-        getch();
+        getchar();
         MainMenu();
     }
     printf("\n\n\t\t\t!!!!!!!!!!!!!! Edit Details !!!!!!!!!!!!!\n");
@@ -439,7 +439,7 @@ void Edit_rec(void)
     }
     else
         printf("record couldnot be updated");
-    getch();
+    getchar();
     MainMenu();
 }
 
@@ -481,6 +481,6 @@ void Dlt_rec()
     {
         printf("Record couldn't be Found And Cannot Be Deleted");
     }
-    getch();
+    getchar();
     MainMenu();
 }
